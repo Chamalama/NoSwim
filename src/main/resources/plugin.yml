@@ -1,0 +1,4 @@
+name: NoSwim
+version: '${version}'
+main: com.cham.noswim.NoSwim
+api-version: '1.20'
