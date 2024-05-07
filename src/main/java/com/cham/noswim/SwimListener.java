@@ -48,7 +48,7 @@ public class SwimListener implements Listener {
         }
     }
 
-    public static void applySpeedToPlayer(Player player) {
+    private void applySpeedToPlayer(Player player) {
         if (player.getEquipment().getBoots() != null) {
             ItemStack boots = player.getEquipment().getBoots();
             if (boots.containsEnchantment(Enchantment.DEPTH_STRIDER)) {
@@ -63,7 +63,7 @@ public class SwimListener implements Listener {
             if (playerSwimming.contains(p.getUniqueId())) {
                 p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 2, -1, false, false));
                 p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 2, -1, false, false));
-                SwimListener.applySpeedToPlayer(p);
+                applySpeedToPlayer(p);
             } else {
                 if (task != null) {
                     taskMap.get(p.getUniqueId()).cancel();
